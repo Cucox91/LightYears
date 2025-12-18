@@ -2,7 +2,16 @@
 add_executable(
 	${LIGHT_YEARS_GAME_TARGET_NAME} 
 	${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/Application.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Application.cpp
 )
+
+# Tis will target the include directories so the can be referenced on the project.
+target_include_directories(
+	${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
+	${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 
 # This will link our project to the downloaded libraries.
 target_link_libraries(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC sfml-graphics)
