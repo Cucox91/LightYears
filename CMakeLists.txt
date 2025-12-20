@@ -1,3 +1,6 @@
+# This is the File for the whole project.
+
+
 # Minimum required version of CMake for the Project.
 cmake_minimum_required(VERSION 3.6)
 
@@ -30,8 +33,10 @@ FetchContent_MakeAvailable(${SFML_LIB_NAME})
 # After this step we need to link the libraries. This is being done in the sub directory.
 
 # Creating a Variable for the Project Name:
+set(LIGHT_YEARS_ENGINE_TARGET_NAME LightYearsEngine)
 set(LIGHT_YEARS_GAME_TARGET_NAME LightYearsGame)
 
 # Here we connect to a sub directory with the same name for CMake that will be at the same src folder level.
-add_subdirectory(LightYears)
+add_subdirectory(LightYearsEngine)
+add_subdirectory(LightYearsGame)
 # After this Step we create an executable file. This is done in the subdirectory.
