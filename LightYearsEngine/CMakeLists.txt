@@ -13,9 +13,17 @@ add_library(
 	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/Core.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Core.cpp
 
+	# This will add the Object functionalities class 
+	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/Object.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Object.cpp
+
 	# This will add the World class 
 	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/World.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/World.cpp
+
+	# This will add the World class 
+	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/Actor.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Actor.cpp
 
 	# This will add the main application entry point (Like main.cpp)
 	${CMAKE_CURRENT_SOURCE_DIR}/include/EntryPoint.h

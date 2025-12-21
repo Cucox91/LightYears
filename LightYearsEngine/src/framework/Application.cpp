@@ -4,8 +4,8 @@
 
 namespace ly
 {
-	Application::Application() :
-		mWindow{ sf::VideoMode(1024,1440), "Ligth Years" },
+	Application::Application(unsigned int windowWidht, unsigned int windowHeight, const std::string& title, sf::Uint32 style) :
+		mWindow{ sf::VideoMode(windowWidht,windowHeight), title, style },
 		mTargetFrameRate{ 60.f },
 		mTickClock{},
 		currentWorld{ nullptr }
@@ -65,14 +65,13 @@ namespace ly
 
 	void Application::Render()										// This is a template function (Programming, not language specific). Because of this our function is virtual.
 	{
-		sf::RectangleShape rect{ sf::Vector2f{100,100} };
-		rect.setFillColor(sf::Color::Green);
-		rect.setOrigin(50, 50);
-		rect.setPosition(mWindow.getSize().x / 2.f, mWindow.getSize().y / 2.f);
-		mWindow.draw(rect);
+		if (currentWorld)
+		{
+			currentWorld->Render(mWindow);
+		}
 	}
 
 	void Application::Tick(float deltaTime) {
-	
+
 	}
 }
