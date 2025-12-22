@@ -17,9 +17,17 @@ add_library(
 	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/Object.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Object.cpp
 
+	# This will add the Math Utility functionalities class 
+	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/MathUtility.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/MathUtility.cpp
+
 	# This will add the World class 
 	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/World.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/World.cpp
+
+	# This will add the Asset Manager class
+	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/AssetManager.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/framework/AssetManager.cpp
 
 	# This will add the World class 
 	${CMAKE_CURRENT_SOURCE_DIR}/include/framework/Actor.h
