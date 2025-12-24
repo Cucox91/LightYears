@@ -83,4 +83,9 @@ namespace ly
 	void Application::Tick(float deltaTime) {
 
 	}
+
+	sf::Vector2u Application::GetWindowSize() const
+	{
+		return mWindow.getSize();
+	}
 }

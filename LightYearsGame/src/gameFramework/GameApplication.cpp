@@ -1,5 +1,7 @@
 #include "gameFramework/GameApplication.h"
 #include "framework/World.h"
+#include "framework/AssetManager.h"
+#include "player/PlayerSpaceship.h"
 #include "config.h"
 
 ly::Application* GetApplication()
@@ -12,14 +14,13 @@ namespace ly
 	GameApplication::GameApplication()
 		: Application{ 600,980,"Light Years", sf::Style::Titlebar | sf::Style::Close }		// The | thing here is called BitMask. Remember Bit Manipulation using or. And remember the Example you used at work the other day.
 	{
+		AssetManager::Get().SetAssetRootDirectory(GetResourceDir());
 		weak<World> newWorld = LoadWorld<World>();
 		//newWorld.lock()->SpawnActor<Actor>();					//When we have a weak pointer always remember that we need to lock it. (I assume this is kind of a borrow checker or something.)
-		actorToDestroy = newWorld.lock()->SpawnActor<Actor>();
+		testPlayerSpaceship = newWorld.lock()->SpawnActor<PlayerSpaceship>();
 		std::string path = GetResourceDir();
-		actorToDestroy.lock()->SetTexture(path + "/SpaceShooterRedux/PNG/playerShip1_blue.png");
-		actorToDestroy.lock()->SetActorLocation(sf::Vector2f(300.f, 490.f));
-		actorToDestroy.lock()->SetActorRotation(90.f);
-		counter = 0;
+		testPlayerSpaceship.lock()->SetActorLocation(sf::Vector2f(300.f, 490.f));
+		testPlayerSpaceship.lock()->SetActorRotation(0.f);
 	}
 	void GameApplication::Tick(float deltaTime)
 	{

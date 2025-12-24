@@ -1,5 +1,6 @@
 #include "framework/Actor.h"
 #include "framework/Core.h"
+#include "framework/World.h"
 #include "framework/AssetManager.h"
 #include "framework/MathUtility.h"
 
@@ -117,6 +118,11 @@ namespace ly
 		{
 			Tick(deltaTime);
 		}
+	}
+
+	sf::Vector2u Actor::GetWindowSize() const
+	{
+		return mOwningWorld->GetWindowSize();
 	}
 }
 

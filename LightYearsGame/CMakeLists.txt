@@ -7,6 +7,12 @@ add_executable(
 
 	${CMAKE_CURRENT_SOURCE_DIR}/include/gameFramework/GameApplication.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/gameFramework/GameApplication.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/include/spaceship/Spaceship.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/spaceship/Spaceship.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/include/player/PlayerSpaceship.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/player/PlayerSpaceship.cpp
 )
 
 # This will target the include directories so the can be referenced on the project.

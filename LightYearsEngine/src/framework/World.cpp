@@ -1,8 +1,7 @@
 #include "framework/World.h"
 #include "framework/Core.h"
 #include "framework/Actor.h"
-
-
+#include "framework/Application.h"
 
 namespace ly
 {
@@ -79,4 +78,6 @@ namespace ly
 	{
 		//LOG("Tick at frame rate %f", 1.f / deltaTime);
 	}
+
+	sf::Vector2u World::GetWindowSize() const { return mOwningApp->GetWindowSize(); }
 }
