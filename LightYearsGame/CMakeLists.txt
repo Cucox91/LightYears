@@ -13,6 +13,15 @@ add_executable(
 
 	${CMAKE_CURRENT_SOURCE_DIR}/include/player/PlayerSpaceship.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/player/PlayerSpaceship.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/include/weapon/Shooter.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/weapon/Shooter.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/include/weapon/BulletShooter.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/weapon/BulletShooter.cpp
+
+		${CMAKE_CURRENT_SOURCE_DIR}/include/weapon/Bullet.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/weapon/Bullet.cpp
 )
 
 # This will target the include directories so the can be referenced on the project.
